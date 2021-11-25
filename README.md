@@ -13,14 +13,12 @@ The library traces the GLIBC functions below and print statistics about memory u
 - You can profile any application using `LD_PRELOAD=build/memsafi.so <app_path> <args>`
 - You can also run **MemSafi** library in debug mode using `MEM_SAFI_DEBUG=1 LD_PRELOAD=memsafi.so <app_path> <args>`
 
-
-# Testing:
-The library is tested against local tests as well as some bash commands like `ls`, `du`, `cat`, ... etc.
-
 ## Notes:
 - The library uses a local temporary buffer to help DLSYM to allocate memory at initalization.
 
 # To Do Items:
+- Add proper testing
+  - The library is tested manually against local tests as well as some bash commands like `ls`, `du`, `cat`, ... etc.
 - Trace size before alignment
   - This feature requires a hash table implemetation to get freed memory size
   - Alternatively, allocated memory could be increased by 4-8 bytes to store meta-data about size
